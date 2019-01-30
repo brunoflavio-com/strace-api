@@ -6,6 +6,8 @@ It was built in order to experiment with the sidecar microservices pattern, as e
 
 This was also an experiment to see micronaut.io in action, and I've started with the [Creating your first Micronaut app](http://guides.micronaut.io/creating-your-first-micronaut-app/guide/index.html) guide.
 
+You can read the blog post documenting this experience in [my blog](https://brunoflavio.com/blog/microservices/docker/2019/01/29/microservices-sidecar-pattern.html).
+
 ## Build instructions
 
 * `./gradlew assembleShadowDist`
