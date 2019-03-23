@@ -26,6 +26,11 @@ public class STraceController {
         this.sTraceService = sTraceService;
     }
 
+    @Get
+    public String index() {
+        return "use /strace/PID/NUMBER_OF_LINES";
+    }
+
     @Get(uri = "/{pid}/{numberOfLines}", produces = MediaType.APPLICATION_JSON)
     public Collection<STraceData> index(int pid, int numberOfLines) throws IOException {
 

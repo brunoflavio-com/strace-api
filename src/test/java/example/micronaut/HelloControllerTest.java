@@ -34,13 +34,13 @@ public class HelloControllerTest {
     }
 
     @Test
-    public void testHello() throws Exception {
-        HttpRequest request = HttpRequest.GET("/hello"); // <3>
+    public void testStrace() throws Exception {
+        HttpRequest request = HttpRequest.GET("/strace"); // <3>
         String body = client.toBlocking().retrieve(request);
         assertNotNull(body);
         assertEquals(
                 body,
-                "Hello World"
+                "use /strace/PID/NUMBER_OF_LINES"
         );
     }
 }
