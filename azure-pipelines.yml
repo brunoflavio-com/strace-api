@@ -13,5 +13,18 @@ variables:
   imageName: 'strace-api:$(build.buildId)'
 
 steps:
+- script: ./gradlew build
+  displayName: 'gradle build'
+
+# Publish Test Results
+# Publish Test Results to Azure Pipelines/TFS
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit' # Options: JUnit, NUnit, VSTest, xUnit, cTest
+    testResultsFiles: '**/TEST-*.xml' 
+  condition: always()
+    
 - script: docker build -f Dockerfile -t $(imageName) .
   displayName: 'docker build'
+
+
