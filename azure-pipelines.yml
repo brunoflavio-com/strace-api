@@ -13,5 +13,6 @@ variables:
   imageName: 'strace-api:$(build.buildId)'
 
 steps:
+- build: ./gradlew build
 - script: docker build -f Dockerfile -t $(imageName) .
   displayName: 'docker build'
